@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Book Store</title>
+    <link rel="stylesheet" href="p7.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h1> Book Store</h1>
+    <div class="nav-links">
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('login')">Login</a>
+        <a href="#" onclick="showPage('catalogue')">Catalogue</a>
+        <a href="#" onclick="showPage('register')">Register</a>
+    </div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="page active">
+    <h2>Welcome to Online Book Store</h2>
+    <p>Simple. Clean. Fast.</p>
+</div>
+
+<!-- LOGIN -->
+<div id="login" class="page">
+    <h2>Login</h2>
+    <form class="card">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button>Login</button>
+    </form>
+</div>
+
+<!-- CATALOGUE -->
+<div id="catalogue" class="page">
+    <h2>Book Catalogue</h2>
+
+    <table>
+        <tr>
+            <th>Book</th>
+            <th>Author</th>
+            <th>Price (₹)</th>
+        </tr>
+        <tr>
+            <td>Java Programming</td>
+            <td>Herbert Schildt</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>DBMS</td>
+            <td>Korth</td>
+            <td>450</td>
+        </tr>
+        <tr>
+            <td>Data Structures</td>
+            <td>Seymour</td>
+            <td>400</td>
+        </tr>
+        <tr>
+            <td>Operating System</td>
+            <td>Galvin</td>
+            <td>550</td>
+        </tr>
+    </table>
+</div>
+
+<!-- REGISTER -->
+<div id="register" class="page">
+    <h2>Register</h2>
+    <form class="card">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <input type="text" placeholder="Phone">
+        
+        <div class="gender">
+            <label><input type="radio" name="g"> Male</label>
+            <label><input type="radio" name="g"> Female</label>
+        </div>
+
+        <button>Register</button>
+    </form>
+</div>
+
+<script>
+function showPage(pageId) {
+    let pages = document.querySelectorAll(".page");
+    pages.forEach(p => p.classList.remove("active"));
+    document.getElementById(pageId).classList.add("active");
+}
+</script>
+
+</body>
+</html>
