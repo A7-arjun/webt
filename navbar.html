@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizontal Navigation Bar</title>
+<link rel="stylesheet" href="p3.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+    <div class="nav-item">Home</div>
+
+    <div class="nav-item dropdown">
+        Services
+        <div class="dropdown-menu">
+            <div class="dropdown-item">Web Design</div>
+            <div class="dropdown-item">App Development</div>
+
+            <div class="dropdown-item nested">
+                More Services ▶
+                <div class="nested-menu">
+                    <div class="dropdown-item">SEO</div>
+                    <div class="dropdown-item">Marketing</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-item dropdown">
+        Products
+        <div class="dropdown-menu">
+            <div class="dropdown-item">Software</div>
+            <div class="dropdown-item">Hardware</div>
+        </div>
+    </div>
+
+    <div class="nav-item">About</div>
+    <div class="nav-item">Contact</div>
+
+</div>
+
+<!-- PAGE CONTENT -->
+<div class="hero">
+    <h1>Welcome to My Website</h1>
+    <p>This page demonstrates a horizontal navigation bar using DIV with nested dropdown menus and CSS layout.</p>
+</div>
+
+<div class="section">
+    <h2>About This Design</h2>
+    <p>
+        This navigation bar is built using only DIV elements.
+        Dropdown and nested menus are controlled using CSS hover.
+        The layout uses Flexbox for horizontal alignment.
+    </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:20px 0;
+    background:#1d1d1f;
+}
+
+.nav-item{
+    position:relative;
+    color:white;
+    cursor:pointer;
+    padding:8px 0;
+    font-size:15px;
+}
+
+/* Underline Animation */
+.nav-item::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#0071e3;
+    bottom:-5px;
+    left:0;
+    transition:0.3s;
+}
+
+.nav-item:hover::after{
+    width:100%;
+}
+
+/* ================= DROPDOWN ================= */
+
+.dropdown-menu{
+    position:absolute;
+    top:35px;
+    left:0;
+    background:white;
+    min-width:180px;
+    border-radius:8px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    display:none;
+    padding:10px 0;
+}
+
+.dropdown:hover .dropdown-menu{
+    display:block;
+}
+
+.dropdown-item{
+    padding:10px 15px;
+    color:#333;
+    font-size:14px;
+    white-space:nowrap;
+}
+
+.dropdown-item:hover{
+    background:#f2f2f2;
+}
+
+/* ================= NESTED MENU ================= */
+
+.nested{
+    position:relative;
+}
+
+.nested-menu{
+    position:absolute;
+    top:0;
+    left:100%;
+    background:white;
+    min-width:160px;
+    border-radius:8px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    display:none;
+    padding:10px 0;
+}
+
+.nested:hover .nested-menu{
+    display:block;
+}
+
+/* ================= CONTENT ================= */
+
+.hero{
+    padding:120px 20px;
+    text-align:center;
+    background:linear-gradient(to right,#e0eafc,#cfdef3);
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:700px;
+    margin:auto;
+}
+
+.section{
+    padding:80px 20px;
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
+
+.section h2{
+    margin-bottom:20px;
+    font-size:28px;
+}
