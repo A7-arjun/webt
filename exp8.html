@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="p8.css">
+
+    <script>
+        function validateForm() {
+
+            var name = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+
+            // Name Validation
+            var namePattern = /^[A-Za-z]{6,}$/;
+            if (!namePattern.test(name)) {
+                alert("Name must contain only alphabets and at least 6 characters");
+                return false;
+            }
+
+            // Password Validation
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return false;
+            }
+
+            // Email Validation
+            var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!emailPattern.test(email)) {
+                alert("Enter valid email (name@domain.com)");
+                return false;
+            }
+
+            // Phone Validation
+            var phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phone)) {
+                alert("Phone number must be exactly 10 digits");
+                return false;
+            }
+
+            alert("Registration Successful!");
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Registration Form</h2>
+
+        <form onsubmit="return validateForm()">
+
+            <label>Name:</label>
+            <input type="text" id="name">
+
+            <label>Password:</label>
+            <input type="password" id="password">
+
+            <label>Email:</label>
+            <input type="text" id="email">
+
+            <label>Phone:</label>
+            <input type="text" id="phone">
+
+            <input type="submit" value="Register">
+
+        </form>
+    </div>
+
+</body>
+</html>
