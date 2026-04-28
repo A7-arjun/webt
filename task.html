@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task App</title>
+  <link rel="stylesheet" href="p11.css">
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Task App</h2>
+
+  <input type="text" id="task" placeholder="Enter task">
+  <button onclick="addTask()">Add</button>
+
+  <ul id="list"></ul>
+</div>
+
+<script>
+async function addTask() {
+  let task = document.getElementById("task").value;
+
+  if(task === "") return;
+
+  await fetch('/add', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ name: task })
+  });
+
+  document.getElementById("task").value = "";
+  loadTasks();
+}
+
+async function loadTasks() {
+  let res = await fetch('/tasks');
+  let data = await res.json();
+
+  let list = document.getElementById("list");
+  list.innerHTML = "";
+
+  data.forEach((t, i) => {
+    list.innerHTML += `
+      <li>
+        ${t.name}
+        <button onclick="deleteTask(${i})">X</button>
+      </li>
+    `;
+  });
+}
+
+async function deleteTask(id) {
+  await fetch('/delete/' + id, { method: 'DELETE' });
+  loadTasks();
+}
+
+loadTasks();
+</script>
+
+</body>
+</html>
