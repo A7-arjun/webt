@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bill & Feedback</title>
+    <link rel="stylesheet" href="p9.css">
+
+    <script>
+        function showBill() {
+            let total = localStorage.getItem("bill");
+            document.getElementById("total").innerHTML = "Total Bill: ₹" + total;
+        }
+
+        function submitFeedback() {
+            let name = document.getElementById("name").value;
+            alert("Thank you " + name + " for your feedback!");
+        }
+    </script>
+</head>
+
+<body onload="showBill()">
+
+<div class="container">
+
+    <h2>🧾 Bill</h2>
+    <h3 id="total"></h3>
+
+    <hr>
+
+    <h2>Feedback</h2>
+
+    <form onsubmit="submitFeedback(); return false;">
+
+        <input type="text" id="name" placeholder="Your Name">
+
+        <select>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+            <option>Poor</option>
+        </select>
+
+        <textarea rows="4" placeholder="Comments"></textarea>
+
+        <button type="submit">Submit Feedback</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

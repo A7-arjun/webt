@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Order</title>
+    <link rel="stylesheet" href="p9.css">
+
+    <script>
+        function generateBill() {
+            let total = 0;
+
+            if (document.getElementById("pizza").checked) total += 200;
+            if (document.getElementById("burger").checked) total += 100;
+            if (document.getElementById("sandwich").checked) total += 80;
+            if (document.getElementById("coffee").checked) total += 50;
+
+            localStorage.setItem("bill", total);
+            window.location.href = "bill.html";
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>🍔 Food Order</h2>
+
+    <div class="menu">
+        <label><input type="checkbox" id="pizza"> Pizza (₹200)</label>
+        <label><input type="checkbox" id="burger"> Burger (₹100)</label>
+        <label><input type="checkbox" id="sandwich"> Sandwich (₹80)</label>
+        <label><input type="checkbox" id="coffee"> Coffee (₹50)</label>
+    </div>
+
+    <button onclick="generateBill()">Place Order</button>
+</div>
+
+</body>
+</html>
